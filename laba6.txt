@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cmath>
+#include <stdio.h>
+#include <math.h>
 
 
 int main()
@@ -10,10 +10,10 @@ int main()
 
 	while (i < 20)
 	{
-		std::cout << array[i] << "\t";
+		printf("%d""\t",array[i]);
 		i++;
 	}
-	std::cout << std::endl;
+	printf("\n");
 	i = 0;
 	int count = 0;
 	while (i < 20)
@@ -27,7 +27,7 @@ int main()
 	};
 	double sSum;
 	sSum = (double)sqrt(abs(sum / count));
-	std::cout << sSum << std::endl;
+	printf("%d""\n",sSum);
 	for (i = 0; i < 20; i++)
 	{
 		if (array[i] == 0)
@@ -38,14 +38,14 @@ int main()
 	i = 0;
 	while (i < 20)
 	{
-		std::cout << array[i] << "\t";
+		printf("%d""\t",array[i]);
 		i++;
 	}
-	std::cout << std::endl;
+	
 
 	
 
 
-	system("pause");
+	
 	return 0;
 }

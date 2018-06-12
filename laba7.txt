@@ -1,21 +1,21 @@
-#include "stdafx.h"
-#include <iostream>
+#include <stdio.h>
 
 
 int main()
 {
 	int arr[] = {1, -2, 3, 5, 0, -14, 7, 9, 1, -3, -7, 3, 10, 4, 0};
 
-	//зростання
-	std::cout << "Input K: "; //включительно с этого элемента
-	int k, l;
-	std::cin >> k;
-	std::cout << "Input L: "; //невключительно до этого элемента
-	std::cin >> l;
-
+	//Г§Г°Г®Г±ГІГ Г­Г­Гї
+	printf("Input K: ""\n"); //ГўГЄГ«ГѕГ·ГЁГІГҐГ«ГјГ­Г® Г± ГЅГІГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
+	int k,l;
+	scanf("%d",k);
+	
+	printf("Input L: ""\n"); //Г­ГҐГўГЄГ«ГѕГ·ГЁГІГҐГ«ГјГ­Г® Г¤Г® ГЅГІГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
+	scanf("%d",l);
+	inr buffer; //РџРѕС‚РѕРјСѓ С‡С‚Рѕ РјРЅРµ РІР»РѕРј
 	if (k > l)
 	{
-		std::cout << "Error! Good bye!" << std::endl;
+		printf("Error! Good bye!""\n");
 		exit(1);
 	}
 
@@ -25,21 +25,24 @@ int main()
 		{
 			if (arr[j] < arr[j - 1]) 
 			{
-				std::swap(arr[j], arr[j - 1]);
+				buffer=arr[j-1];
+				arr[i-1]=arr[j]
+				arr[j]=buffer;
+				
 			}
 		}
 	}
 
-	//спадання
-	std::cout << "Input M: "; //включительно с этого элемента
+	//Г±ГЇГ Г¤Г Г­Г­Гї
+	printf("Input M: ""\n"); //ГўГЄГ«ГѕГ·ГЁГІГҐГ«ГјГ­Г® Г± ГЅГІГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 	int m, p;
-	std::cin >> m;
-	std::cout << "Input P: "; //невключительно до этого элемента
-	std::cin >> p;
+	scanf("%d",m);
+	printf("Input P: ""\n"); //Г­ГҐГўГЄГ«ГѕГ·ГЁГІГҐГ«ГјГ­Г® Г¤Г® ГЅГІГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
+	scanf("%d",p);
 
 	if (m > p && m < l)
 	{
-		std::cout << "Error! Good bye!" << std::endl;
+		printf("Error! Good bye!""\n");
 		exit(1);
 	}
 
@@ -49,18 +52,21 @@ int main()
 		{
 			if (arr[j] > arr[j - 1])
 			{
-				std::swap(arr[j], arr[j - 1]);
+				buffer=arr[j];
+				arr[j]=arr[j-1];
+				arr[j-1]=buffer;
+				
 			}
 		}
 	}
-	//вывод 
+	//ГўГ»ГўГ®Г¤ 
 	for (int i = 0; i < 15; i++)
 	{
-		std::cout << arr[i] << "\t";
+		printf("%d""\t",arr[i]);
 	}
-	std::cout << std::endl;
+	
 
-	system("pause");
+	
     return 0;
 }
 
