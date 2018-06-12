@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	srand(time(NULL));
+	int X[5]={4,-3,8,2,7};
+	int Y[7]={-5,12,9,0,-1,6,6};
+	int C[12];
+	int buffer;//a chto? Glavnoe, chtoby rabotalo
+
+	for (int i = 0; i < 12; i++)
+	{
+		if (i<=4) {
+			C[i]=X[i];
+		}
+		if (i>4){
+			C[i]=Y[i-5];
+		}
+		printf("%d""\t",C[i]);
+	}
+	printf("\n");
+	for (int i = 0; i < 10 + rand() % 30; i++)
+	{
+		int j = rand() % 12;
+		bool check= rand() % 1;
+		if (check===1){
+		buffer=C[j];
+		C[j]=C[j+1];
+		C[j+1]=buffer;}
+		else {
+		buffer=C[j];
+		C[j]=C[j-1];
+		C[j-1]=buffer;
+		}
+
+	}
+	for (int i = 0; i < 12; i++)
+	{
+		printf("%d""\t",C[i]);
+	}
+
+	return 0;
+}
